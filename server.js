@@ -4,6 +4,7 @@ const routes = require('./routes');
 const exphbs = require('express-handlebars');
 const bcrypt = require('bcrypt');
 const mysql = require('mysql2');
+const path = require('path');
 
 require('dotenv').config();
 
@@ -27,6 +28,7 @@ const hbs = exphbs.create({});
 app.use(express.static('public'));
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
+app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(session(sess));
 
@@ -35,8 +37,13 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use(routes);
 
-app.get('/', (req,res) => 
-res.sendFile(path.join(__dirname, '/public'))
+app.get('/', (req,res) => {
+    res.render('home',
+    // {
+    //     logged_in:req.session.logged_in
+    // }
+    );
+    }
 );
 
 sequelize.sync({ force: false }).then(() => {
