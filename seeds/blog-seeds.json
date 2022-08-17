@@ -1,0 +1,22 @@
+[
+    {
+        "blog_id":1,
+        "blog_name":"Exploring Regex",
+        "user_id":1
+    },
+    {
+        "blog_id":2,
+        "blog_name":"Exploring Regex",
+        "user_id":1
+    },
+    {
+        "blog_id":3,
+        "blog_name":"Exploring Regex",
+        "user_id":2
+    },
+    {
+        "blog_id":4,
+        "blog_name":"Exploring Regex",
+        "user_id":2
+    }
+]

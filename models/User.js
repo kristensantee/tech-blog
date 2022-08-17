@@ -38,7 +38,10 @@ User.init(
         blog_id: {
             type: DataTypes.STRING,
             allowNull: true,
-            autoIncrement: true
+            references: {
+                model: 'blog',
+                key: "blog_id"
+            }
         }
     },
     {
